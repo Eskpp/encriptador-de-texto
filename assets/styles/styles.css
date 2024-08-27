@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+    --background-primary: #f3f5fc;
+    --background-secundary: #d8dfe8;
+    --text-primary: #0a3871;
+    --text-secundary: #495057;
+    --text-tertiary: #343a40;
+}
+
+::placeholder {
+    color: var(--text-primary);
+}
+
+/*icono exclamación*/
+.bi--exclamation-circle-fill {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2'/%3E%3C/svg%3E");
+}
+
+/*css reset*/
+* {
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+    border: none;
+    overflow: visible;
+    /*outline: none;*/
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+body,
+html {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--background-primary);
+}
+
+main {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 2.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.encriptador-entrada {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+    textarea {
+        font-size: 2rem;
+        background-color: var(--background-primary);
+        color: var(--text-primary);
+        height: 100%;
+    }
+    .encriptador-entrada-info {
+        color: var(--text-secundary);
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+    .botones {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        .boton-encriptar {
+            background-color: var(--text-primary);
+            color: white;
+            border-radius: 1.5rem;
+            font-size: 1rem;
+            width: 50%;
+            padding: 1.5rem 0;
+        }
+
+        .boton-desencriptar {
+            background-color: var(--background-secundary);
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            border-radius: 1.5rem;
+            font-size: 1rem;
+            width: 50%;
+            padding: 1.5rem 0;
+        }
+    }
+}
+
+.encriptador-salida {
+    /*
+    background-image: url(/assets/img/Muñeco.png);
+    background-repeat: no-repeat;
+    background-position: center;    
+    background-size: 80%;
+    */
+
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    border-radius: 2rem;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+
+    .encriptador-salida-default {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        img {
+            width: 80%;
+        }
+        h2 {
+            width: 80%;
+            color: var(--text-tertiary);
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        p {
+            width: 80%;
+            color: var(--text-secundary);
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+
+    .encriptador-salida-activo {
+        box-sizing: border-box;
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        display: none;
+        textarea {
+            font-size: 1.5rem;
+            color: var(--text-secundary);
+            height: 100%;
+        }
+
+        button {
+            background-color: white;
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            border-radius: 1.5rem;
+            font-size: 1rem;
+            width: 100%;
+            padding: 1.5rem 0;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    main {
+        flex-direction: column;
+        height: 120%;
+        gap: 3.5rem;
+    }
+
+    .encriptador-entrada {
+        box-sizing: content-box;
+        padding: 0;
+        height: 60%;
+    }
+
+    .encriptador-salida {
+        height: 40%;
+        width: 100%;
+        img {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 599px) {
+    main {
+        padding: 1rem;
+        flex-direction: column;
+        height: 125%;
+    }
+
+    .encriptador-entrada {
+        box-sizing: content-box;
+        padding: 0;
+        height: 60%;
+        .botones {
+            flex-direction: column;
+            align-items: center;
+
+            .boton-encriptar {
+                width: 100%;
+            }
+
+            .boton-desencriptar {
+                width: 100%;
+            }
+        }
+    }
+
+    .encriptador-salida {
+        height: 40%;
+        width: 100%;
+        img {
+            display: none;
+        }
+    }
+}

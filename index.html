@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/styles/styles.css" />
+        <title>Encriptador</title>
+    </head>
+    <body>
+        <main>
+            <section class="logo">
+                <img src="/assets/img/Logo.png" alt="Alura logo" />
+            </section>
+            <section class="encriptador-entrada">
+                <textarea
+                    type="textarea"
+                    placeholder="Ingrese el texto aqui"
+                    id="texto_entrada"
+                ></textarea>
+                <div class="encriptador-box-inferior">
+                    <div class="encriptador-entrada-info">
+                        <span class="bi--exclamation-circle-fill"></span>
+                        <p>Solo letras minúsculas y sin acentos</p>
+                    </div>
+                    <div class="botones">
+                        <button class="boton-encriptar" onclick="encriptar();">
+                            Encriptar
+                        </button>
+                        <button
+                            class="boton-desencriptar"
+                            onclick="desencriptar();"
+                        >
+                            Desencriptar
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="encriptador-salida">
+                <div class="encriptador-salida-default" id="encriptador-salida-default">
+                    <img src="/assets/img/Muñeco.png" alt="muñeco con lupa" />
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div class="encriptador-salida-activo" id="encriptador-salida-activo">
+                    <textarea id="encriptador-salida-parrafo" disabled></textarea>
+                    <button onclick="copyText();">Copiar</button>
+                </div>
+            </section>
+        </main>
+
+        <script src="/scripts/scripts.js"></script>
+
+        <footer></footer>
+    </body>
+</html>
